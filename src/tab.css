@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* 盒子模型 */
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+}
+.tab {
+    width: 700px;
+    height: 250px;
+    color: #607291;
+    background-color: #FFF;
+    overflow: hidden;
+}
+input {
+    /* 去掉选择圆点默认样式 */
+    display: none;
+}
+label {
+    float: left;
+    width: calc(700px / 3);
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    background-color: #e5e9ea;
+    transition: all .3s;
+}
+label:hover {
+    background-color: #fff;
+}
+ul {
+    
+    clear:both;
+    width: 3500px;
+    height: 210px;
+    transition: all .5s;
+}
+li {
+    width: 700px;
+    float: left;
+    padding-left: 20px;
+    padding-top: 20px;
+    text-indent: 2em;
+    /* 伸缩盒子模型 */
+    display: inline;
+    /* 让子元素垂直排列 */
+    -webkit-box-orient: vertical;
+    /* 只显示3行 */
+    -webkit-line-clamp: 3;
+    /* 溢出隐藏 */
+    overflow: hidden;
+}
+#tab1:checked~ul {
+    margin-left: 0;
+}
+#tab2:checked~ul {
+    margin-left: -700px;
+}
+#tab3:checked~ul {
+    margin-left: -1400px;
+}
+#tab1:checked~label[for="tab1"]{
+    background-color: #fff;
+}
+#tab2:checked~label[for="tab2"]{
+    background-color: #fff;
+}
+#tab3:checked~label[for="tab3"]{
+    background-color: #fff;
+}
